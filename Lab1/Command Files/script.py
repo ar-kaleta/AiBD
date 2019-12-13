@@ -1,7 +1,7 @@
 import pandas as pd
 # import pyreadstat as py
 
-df = pd.read_csv("./Analysis Data/converted.csv", sep='`')
+df = pd.read_csv("Analysis Data/converted.csv", sep='`')
 # with pd.option_context('display.max_columns', None):  # more options can be specified also
 #     print(df)
 
@@ -11,27 +11,25 @@ religions = sorted(set(df['q16']))
 
 grouped = df.groupby(['income'])
 
-
-newTable = pd.DataFrame(columns=['Income', religions])
-
-
+temp_dict = {}
 for name, group in grouped:
-    temp_tab = [name]
+    list_of_religions = group.q16.tolist()
+    religion = {}
     for rel in religions:
-        a = pd.DataFrame(group['q16'].value_counts())
-        print(a[rel])
-        if rel in set(group.q16):
-            temp_tab.append(group.q16.counts(rel))
+        number = 0
+        for elem in list_of_religions:
+            if elem == rel:
+                number += 1
+        religion[rel] = [number]
+    temp_dict[name] = religion
 
 
-
-    # newTable.append({Income: name, )
-
-
-print(newTable)
-
-with pd.option_context('display.max_columns', None):
-    print(newTable)
-
+temp_list = []
+for elem in temp_dict:
+    temp_list.append([elem, pd.DataFrame(temp_dict[elem])])
+i = 0
+for elem in temp_list:
+    elem.to_csv(path_or_buf=str('../analysis_data/' + str([dataframe, i]) + '.csv')
+    i += 1
 
 
