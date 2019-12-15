@@ -1,0 +1,13 @@
+W katalogu Command Files znajdują się pliki:
+1. convert.r - skrypt w języku R do konwertowania pliku pew.sav na .csv
+2. script.py - skrypt w Pythonie do przetwarzania danych
+
+W katalogu Analysis Data znajdują się pliki:
+1. converted.csv - oryginalne dane przekonwertowane na format .csv
+
+W katalogu Original Data znajdują się pliki:
+1. pew.sav - oryginalny plik danych w formacie SPSS
+
+Aby dokonać analizy danych należy:
+1. Uruchomić skrypt convert.r w celu przygotowania danych
+2. Uruchomić skrypt script.py w celu przetworzenia danych

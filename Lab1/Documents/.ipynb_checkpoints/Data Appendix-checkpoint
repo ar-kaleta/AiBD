@@ -1,0 +1,3 @@
+Aby dokonać konwersji danych z formatu SPSS do pliku csv należy uruchomić R skrypt: Command Files/convert.r.
+Do tego celu potrzebna jest biblioteka foreign
+
